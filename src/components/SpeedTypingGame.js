@@ -115,9 +115,16 @@ const SpeedTypingGame = () => {
     setTimeLeft(maxTime);
     setCharIndex(0);
     setMistakes(0);
-    setTypingText("");
     setCPM(0);
     setWPM(0);
+
+    const characters = document.querySelectorAll(".char");
+    characters.forEach((span) => {
+      span.classList.remove("correct");
+      span.classList.remove("wrong");
+      span.classList.remove("active");
+    });
+
     loadParagraph();
   };
 
